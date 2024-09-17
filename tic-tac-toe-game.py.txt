@@ -1,0 +1,48 @@
+def result2(c):
+    val=0
+    for i in range(3):
+        if(c[i][0]=="X" and c[i][1]=="X" and c[i][2]=="X"):
+            val+=1
+    for i in range(3):
+        if(c[0][i]=="X" and c[1][i]=="X" and c[2][i]=="X"):
+            val+=1
+    if(c[0][0]=="X" and c[1][1]=="X" and c[2][2]=="X"):
+        val+=1 
+    if(c[0][2]=="X" and c[1][1]=="X" and c[2][0]=="X"):
+        val+=1 
+    if(val==1):
+        return "aj"
+
+def result(c):
+    val=0
+    for i in range(3):
+        if(c[i][0]=="O" and c[i][1]=="O" and c[i][2]=="O"):
+            val+=1
+    for i in range(3):
+        if(c[0][i]=="O" and c[1][i]=="O" and c[2][i]=="O"):
+            val+=1
+    if(c[0][0]=="O" and c[1][1]=="O" and c[2][2]=="O"):
+        val+=1 
+    if(c[0][2]=="O" and c[1][1]=="O" and c[2][0]=="O"):
+        val+=1 
+    if(val==1):
+        return "ab"
+
+a=input().split()
+b=input().split()
+d=input().split()
+c=[a,b,d]
+
+ab=result(c)
+aj=result2(c)
+
+if(ab=="ab"):
+    print("Abhinav Wins")
+elif(aj=="aj"):
+    print("Anjali Wins")
+else:
+    print("Tie")
+
+
+
+    
